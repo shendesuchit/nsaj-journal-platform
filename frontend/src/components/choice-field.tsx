@@ -1,0 +1,2 @@
+"use client";
+export function ChoiceField({name,label,options,defaultValue}:{name:string;label:string;options:{value:string;label:string}[];defaultValue:string}){return <fieldset className="choice-field"><legend>{label}</legend><div>{options.map(o=><label key={o.value}><input type="radio" name={name} value={o.value} defaultChecked={o.value===defaultValue} required/>{o.label}</label>)}</div></fieldset>;}

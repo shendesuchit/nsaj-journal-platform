@@ -1,0 +1,3 @@
+"use client";
+import {useId} from "react";
+export function DateTimeField({name,label,defaultValue="",dateOnly=false,required=false,disabled=false,hint}:{name:string;label:string;defaultValue?:string;dateOnly?:boolean;required?:boolean;disabled?:boolean;hint?:string}){const id=useId();return <div className="date-time-field"><label htmlFor={id}>{label}{required&&<span className="required-mark"> *</span>}</label><input id={id} name={name} type={dateOnly?"date":"datetime-local"} defaultValue={defaultValue} required={required} disabled={disabled} aria-describedby={`${id}-help`}/><p id={`${id}-help`} className="form-help">{hint} {dateOnly?"Choose a date.":"Choose date and time together, in your device’s local time zone."}</p></div>;}

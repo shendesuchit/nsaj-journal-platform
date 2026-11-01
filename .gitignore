@@ -1,0 +1,978 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+*.egg-info/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.local/
+private_storage/
+
+# Testing and coverage
+.pytest_cache/
+.playwright/
+playwright-report/
+test-results/
+.coverage
+htmlcov/
+
+# Type checking and linting
+.mypy_cache/
+.ruff_cache/# ============================================================
+# NSAJ Journal Platform
+# Root .gitignore
+#
+# Stack:
+# - Python / FastAPI
+# - PostgreSQL
+# - SQLAlchemy / Alembic
+# - Next.js / React / TypeScript
+# - Node.js
+# - Docker / Docker Compose
+# - pytest / Playwright
+# - VS Code
+# - WSL2 / Linux
+# ============================================================
+
+
+# ============================================================
+# ENVIRONMENT VARIABLES / SECRETS
+# ============================================================
+
+# Never commit real environment files
+.env
+.env.*
+!.env.example
+
+# Local environment overrides
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Secret/config variants
+*.env
+*.secret
+*.secrets
+secrets/
+secret/
+
+# Private key / certificate material
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+
+# SSH keys
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# Application secret files
+credentials.json
+service-account.json
+service_account.json
+
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Native extensions
+*.so
+
+# Python package / distribution files
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# pyenv
+.python-version
+
+# Poetry
+poetry.lock.backup
+
+# PDM
+.pdm-python
+.pdm-build/
+__pypackages__/
+
+# Rye
+.rye/
+
+# uv
+.uv/
+
+# pipenv
+Pipfile.lock.backup
+
+
+# ============================================================
+# PYTHON TESTING / COVERAGE
+# ============================================================
+
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+coverage.json
+htmlcov/
+.pytest-workspace-tmp/
+**/.pytest-workspace-tmp/
+nosetests.xml
+
+.tox/
+.nox/
+
+.cache/
+
+pytestdebug.log
+
+# Hypothesis
+.hypothesis/
+
+# Test output
+test-results/
+reports/
+report/
+
+
+# ============================================================
+# TYPE CHECKING / LINTING
+# ============================================================
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyright
+.pyright/
+
+# Ruff
+.ruff_cache/
+
+# pylint
+.pylint.d/
+
+# pyre
+.pyre/
+
+# pytype
+.pytype/
+
+
+# ============================================================
+# FASTAPI / BACKEND LOCAL FILES
+# ============================================================
+
+# Runtime PID files
+*.pid
+*.pid.lock
+
+# Local application runtime data
+runtime/
+tmp/
+temp/
+
+# Local uploads
+uploads/
+uploaded_files/
+
+# IMPORTANT:
+# Production manuscript/review files should live in controlled
+# storage, not inside Git.
+private_uploads/
+private_files/
+private_storage/
+
+# Locally generated public assets
+generated_assets/
+
+# Local storage mounts
+storage/
+data/storage/
+
+# App-local SQLite databases if used during testing/development
+*.sqlite
+*.sqlite3
+*.db
+
+# Keep migration scripts tracked.
+# Do NOT ignore backend/alembic/versions/
+
+
+# ============================================================
+# POSTGRESQL
+# ============================================================
+
+# Local PostgreSQL data directories
+postgres-data/
+postgres_data/
+pgdata/
+.pgdata/
+
+# Database dumps / backups
+*.sql
+*.sql.gz
+*.dump
+*.backup
+*.bak
+
+# Local DB exports
+db-dumps/
+db_dumps/
+database-backups/
+database_backups/
+
+# PostgreSQL runtime files
+postmaster.pid
+postmaster.opts
+
+
+# ============================================================
+# ALEMBIC
+# ============================================================
+
+# Alembic migration files SHOULD be committed.
+# This section intentionally does not ignore:
+#
+# backend/alembic/
+# backend/alembic/versions/
+# backend/alembic.ini
+
+# Ignore only temporary Alembic artifacts
+alembic.log
+
+
+# ============================================================
+# NODE.JS / NPM / PNPM / YARN
+# ============================================================
+
+node_modules/
+
+# Package manager caches
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Yarn classic integrity
+.yarn-integrity
+
+# npm debug logs
+npm-debug.log*
+npm-error.log*
+
+# Yarn logs
+yarn-debug.log*
+yarn-error.log*
+
+# pnpm logs
+pnpm-debug.log*
+
+# Node diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+
+# ============================================================
+# NEXT.JS
+# ============================================================
+
+.next/
+out/
+
+# Next.js build traces
+.next/cache/
+
+# Next.js generated files
+next-env.d.ts
+
+# NOTE:
+# next-env.d.ts is automatically regenerated by Next.js.
+# If your team prefers committing it, remove the line above.
+
+
+# ============================================================
+# REACT / FRONTEND BUILD OUTPUT
+# ============================================================
+
+build/
+dist/
+
+# Static export output
+out/
+
+# Parcel
+.cache/
+.parcel-cache/
+
+# Vite
+.vite/
+
+# Turbo
+.turbo/
+
+# SWC
+.swc/
+
+# Storybook
+storybook-static/
+
+# Generated frontend output
+frontend/generated/
+
+
+# ============================================================
+# TYPESCRIPT
+# ============================================================
+
+*.tsbuildinfo
+
+# TypeScript build output
+tsconfig.tsbuildinfo
+
+
+# ============================================================
+# ESLINT / PRETTIER
+# ============================================================
+
+.eslintcache
+
+# Prettier cache
+.prettier-cache
+
+
+# ============================================================
+# PLAYWRIGHT
+# ============================================================
+
+playwright-report/
+playwright/.cache/
+test-results/
+
+# Playwright browser downloads if locally redirected
+.playwright/
+
+# Screenshots/videos/traces from failed tests
+**/test-results/
+**/playwright-report/
+
+
+# ============================================================
+# CYPRESS
+# ============================================================
+
+# Included in case Cypress is introduced later.
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+
+# ============================================================
+# DOCKER
+# ============================================================
+
+# Docker local override files
+docker-compose.override.yml
+docker-compose.override.yaml
+compose.override.yml
+compose.override.yaml
+
+# Local Docker environment files
+.docker-env
+docker.env
+
+# Container-mounted runtime data
+docker-data/
+docker_data/
+
+# Docker build artifacts
+*.docker.tmp
+
+# IMPORTANT:
+# Keep these tracked:
+#
+# Dockerfile
+# compose.yaml
+# docker-compose.yml
+# infrastructure/docker/
+
+
+# ============================================================
+# LOG FILES
+# ============================================================
+
+*.log
+logs/
+log/
+
+# Backend logs
+backend/logs/
+
+# Frontend logs
+frontend/logs/
+
+# Worker logs
+worker/logs/
+
+# Rotated logs
+*.log.*
+*.out
+*.err
+
+
+# ============================================================
+# CACHE / TEMPORARY FILES
+# ============================================================
+
+tmp/
+temp/
+.cache/
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+
+# Lock files created by editors/processes
+*.lock~
+
+# Temporary download files
+*.part
+*.crdownload
+
+
+# ============================================================
+# OS-GENERATED FILES
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon
+
+._*
+
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+*.stackdump
+
+[Dd]esktop.ini
+
+$RECYCLE.BIN/
+
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# ============================================================
+# WSL / LINUX
+# ============================================================
+
+# Linux editor backup files
+*~
+
+# Linux core dumps
+core
+core.*
+
+# WSL metadata / local artifacts
+.wslconfig.local
+
+# Mounted Windows artifacts should never be copied into repo
+mnt/
+
+
+# ============================================================
+# VS CODE
+# ============================================================
+
+.vscode/*
+
+# Keep useful shared workspace settings
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# VS Code history
+.history/
+
+# VS Code REST client environment secrets
+.vscode/rest-client.env.json
+
+
+# ============================================================
+# JETBRAINS IDEs
+# ============================================================
+
+.idea/
+
+*.iml
+*.ipr
+*.iws
+
+out/
+
+
+# ============================================================
+# SUBLIME TEXT
+# ============================================================
+
+*.sublime-workspace
+
+
+# ============================================================
+# VIM
+# ============================================================
+
+*.swp
+*.swo
+*.swn
+
+Session.vim
+.netrwhist
+
+
+# ============================================================
+# EMACS
+# ============================================================
+
+*~
+\#*\#
+.\#*
+
+
+# ============================================================
+# JUPYTER
+# ============================================================
+
+.ipynb_checkpoints/
+
+# Jupyter runtime
+.jupyter/
+.local/share/jupyter/runtime/
+
+
+# ============================================================
+# COVERAGE / QUALITY REPORTS
+# ============================================================
+
+coverage/
+coverage-reports/
+quality-reports/
+
+lcov.info
+.nyc_output/
+
+# SonarQube
+.scannerwork/
+
+
+# ============================================================
+# SECURITY SCANNERS
+# ============================================================
+
+# Bandit reports
+bandit-report.*
+bandit_report.*
+
+# Safety/pip audit reports
+pip-audit-report.*
+pip_audit_report.*
+
+# Trivy reports
+trivy-report.*
+trivy_report.*
+
+# Dependency scan temporary output
+security-reports/
+security_reports/
+
+
+# ============================================================
+# LOCAL EMAIL / DEVELOPMENT SERVICES
+# ============================================================
+
+# Mailpit / Mailhog local data
+mailpit-data/
+mailhog-data/
+
+# Local email previews
+email-previews/
+email_previews/
+
+
+# ============================================================
+# BACKGROUND WORKERS / QUEUES
+# ============================================================
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Generic worker runtime
+worker-data/
+worker_data/
+
+# Redis persistence if mounted locally
+dump.rdb
+appendonly.aof
+redis-data/
+redis_data/
+
+
+# ============================================================
+# OBJECT STORAGE / FILE SERVICE LOCAL DATA
+# ============================================================
+
+# MinIO / local S3-compatible storage
+minio-data/
+minio_data/
+
+# Local object storage
+object-storage/
+object_storage/
+
+
+# ============================================================
+# SEARCH / INDEXING LOCAL DATA
+# ============================================================
+
+# Elasticsearch / OpenSearch
+elasticsearch-data/
+opensearch-data/
+
+# Meilisearch
+meili_data/
+meilisearch-data/
+
+
+# ============================================================
+# BACKUPS
+# ============================================================
+
+backups/
+backup/
+
+*.backup
+*.dump
+*.tar.gz.backup
+
+# Application export files
+exports/
+export/
+
+# Restore scratch directories
+restore/
+restore-temp/
+restore_tmp/
+
+
+# ============================================================
+# PUBLICATION / JOURNAL FILES
+# ============================================================
+
+# Never commit real submitted manuscripts
+manuscripts/
+submissions/
+
+# Never commit real confidential review files
+reviews/
+review-files/
+review_files/
+
+# Never commit author-uploaded private attachments
+attachments/private/
+
+# Never commit production editorial exports by default
+editorial-exports/
+editorial_exports/
+
+# Local generated article PDFs
+generated-pdfs/
+generated_pdfs/
+
+# If sample/fixture files are intentionally tracked,
+# place them in explicit test fixture directories such as:
+#
+# backend/tests/fixtures/
+# frontend/src/__fixtures__/
+#
+# and keep them non-sensitive.
+
+
+# ============================================================
+# JOURNAL IDENTIFIER / INTEGRATION CREDENTIALS
+# ============================================================
+
+# Crossref / DOI credentials
+crossref.env
+crossref_credentials.*
+doi_credentials.*
+
+# ORCID credentials
+orcid.env
+orcid_credentials.*
+
+# SMTP credentials
+smtp.env
+smtp_credentials.*
+
+# Cloud provider credentials
+aws_credentials
+aws-credentials
+gcp_credentials.*
+azure_credentials.*
+
+# Generic integration credentials
+integration_credentials.*
+credentials/
+
+
+# ============================================================
+# GENERATED DOCUMENTATION
+# ============================================================
+
+# MkDocs
+site/
+
+# Sphinx
+docs/_build/
+
+# Docusaurus
+.docusaurus/
+
+# Generated API docs
+generated-docs/
+generated_docs/
+
+
+# ============================================================
+# LOCAL DEVELOPMENT NOTES
+# ============================================================
+
+notes.local.md
+notes.private.md
+TODO.local.md
+scratch.md
+scratch/
+
+# Developer-specific configuration
+*.local.json
+*.local.yaml
+*.local.yml
+*.local.toml
+
+
+# ============================================================
+# PROFILING / DEBUGGING
+# ============================================================
+
+*.prof
+*.profile
+
+profiles/
+profiling/
+
+# Python debugger
+.pydevproject
+
+# Heap / performance dumps
+*.heapsnapshot
+
+
+# ============================================================
+# CI / LOCAL CI ARTIFACTS
+# ============================================================
+
+artifacts/
+ci-artifacts/
+ci_artifacts/
+
+# Keep CI workflow definitions tracked:
+#
+# .github/workflows/
+
+
+# ============================================================
+# GITHUB LOCAL FILES
+# ============================================================
+
+# GitHub CLI local cache if created
+.github-cli/
+
+# Keep normal repository GitHub configuration tracked:
+#
+# .github/workflows/
+# .github/ISSUE_TEMPLATE/
+# .github/PULL_REQUEST_TEMPLATE.md
+# .github/dependabot.yml
+
+
+# ============================================================
+# GIT PATCH / MERGE ARTIFACTS
+# ============================================================
+
+*.patch~
+*.rej
+
+# Merge conflict backups
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*.BACKUP.*
+
+
+# ============================================================
+# LOCAL CERTIFICATE / TLS DEVELOPMENT DATA
+# ============================================================
+
+certs/local/
+certificates/local/
+
+localhost.pem
+localhost-key.pem
+
+# mkcert local CA material
+rootCA.pem
+rootCA-key.pem
+
+
+# ============================================================
+# APPLICATION-SPECIFIC LOCAL OVERRIDES
+# ============================================================
+
+config.local.py
+settings.local.py
+settings.local.json
+settings.local.yaml
+settings.local.yml
+
+backend/app/config/local.py
+frontend/src/config/local.*
+
+
+# ============================================================
+# GENERATED API CLIENTS
+# ============================================================
+
+# If API clients are generated during local builds,
+# keep generated output ignored unless the project explicitly
+# decides to commit generated clients.
+
+frontend/src/generated/
+frontend/src/api/generated/
+backend/generated/
+
+
+# ============================================================
+# LOCAL DATABASE / FIXTURE EXPORTS
+# ============================================================
+
+fixtures/local/
+fixtures/private/
+
+seed-data.local.*
+seed_data.local.*
+
+dev-data/
+dev_data/
+
+
+# ============================================================
+# DO NOT IGNORE THESE IMPORTANT PROJECT FILES
+# ============================================================
+
+# The following are intentionally NOT ignored:
+#
+# README.md
+# LICENSE
+# .gitignore
+# .env.example
+# compose.yaml
+# Dockerfile
+# backend/pyproject.toml
+# backend/alembic.ini
+# backend/alembic/versions/
+# frontend/package.json
+# frontend/package-lock.json
+# frontend/pnpm-lock.yaml
+# frontend/yarn.lock
+# docs/
+# .github/workflows/
+#
+# Package-manager lock files should normally be committed
+# to provide reproducible dependency installation.

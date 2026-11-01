@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link";
+import {useEffect,useState} from "react";
+import {useRouter} from "next/navigation";
+import {AuthorDownloads} from "@/components/author-downloads";
+import {api,type ApiError} from "@/lib/api";
+export default function Resources(){const router=useRouter();const [ready,setReady]=useState(false),[error,setError]=useState("");async function load(){setError("");try{const user=await api<{authenticated?:boolean;roles:string[]}>("/auth/me");if(user.authenticated===false){router.replace("/sign-in");return;}if(!user.roles.includes("author"))throw Error("An author account is required.");setReady(true);}catch(e){if((e as ApiError).status===401)router.replace("/sign-in");else setError(e instanceof Error?e.message:"Unable to load workspace.");}}useEffect(()=>{void load();},[]);return <main id="main-content" tabIndex={-1} className="workspace-page"><header className="workspace-header"><div><p className="eyebrow">Author workspace</p><h1>Preparation files</h1><p>Templates and guidance, always available in one place.</p></div><Link className="secondary-button" href="/author">My manuscripts</Link></header>{error?<><p role="alert">{error}</p><button className="secondary-button" onClick={()=>void load()}>Try again</button></>:!ready?<p role="status">Loading workspace…</p>:<><AuthorDownloads heading="Templates & downloads"/><div className="work-actions"><Link href="/pages/author-guidelines">Author guidelines</Link><Link href="/publishing-process">Publishing process</Link></div></>}</main>;}

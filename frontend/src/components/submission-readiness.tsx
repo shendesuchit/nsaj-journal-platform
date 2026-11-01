@@ -1,0 +1,10 @@
+"use client";
+import {useEffect,useState} from "react";
+import {JournalIcon} from "@/components/journal-art";
+import {submissionRequirements,type ReadinessDraft} from "@/lib/submission-readiness";
+export function SubmissionReadiness({draft,dirty,declarationsComplete}:{draft:ReadinessDraft|null;dirty:boolean;declarationsComplete:boolean}){
+ const [expanded,setExpanded]=useState(true);
+ useEffect(()=>{const q=window.matchMedia("(max-width:850px)");const sync=()=>setExpanded(!q.matches);sync();q.addEventListener("change",sync);return()=>q.removeEventListener("change",sync);},[]);
+ const items=submissionRequirements(draft,declarationsComplete&&!dirty), count=items.filter(i=>i.complete).length;
+ return <section className="readiness-card" aria-labelledby="readiness-title"><div className="readiness-heading"><span className="sidebar-section-icon"><JournalIcon name="shield"/></span><div><h2 id="readiness-title"><button type="button" className="readiness-toggle" aria-expanded={expanded} aria-controls="readiness-details" onClick={()=>setExpanded(!expanded)}>Before you submit <JournalIcon name="chevron" size={14}/></button></h2><p aria-live="polite">{count} of {items.length} checks complete</p></div></div><progress max={items.length} value={count} aria-label="Submission readiness"/><div id="readiness-details" hidden={!expanded}><p className="readiness-note">{dirty?"Save your changes to update these checks.":!draft?"Save a draft to get started.":"Checks reflect your saved draft."}</p><ul>{items.map(item=><li key={item.label}><a href={!draft&&item.href==="#files-title"?"#editor-title":item.href} data-complete={item.complete}><span className="readiness-check" aria-hidden="true">{item.complete&&<JournalIcon name="check" size={12}/>}</span><span>{item.label}</span><span className="visually-hidden">: {item.complete?"Complete":"Action needed"}</span></a></li>)}</ul><a className="readiness-next" href="#submission-declarations">Review declarations <JournalIcon name="arrow" size={14}/></a></div></section>;
+}

@@ -1,0 +1,50 @@
+.overview-panel,.overview-columns>* ,.admin-case,.workspace-page{min-width:0}.overview-table-wrap{max-width:100%;overflow:auto}.overview-table-wrap th strong,.overview-table-wrap th small{display:block;margin:6px 0}.overview-table-wrap tr[data-status=submitted]{background:#f3efff}.draft-item[data-status=submitted]{background:#f3efff;border-left:4px solid #7453a7}.filter-count{display:inline-block;min-width:1.4em;margin-left:.3rem;font-weight:700}.case-next,.decision-ready{padding:18px;border-radius:10px;border:1px solid #b5d4cd;background:#edf6f3;margin:16px 0}.case-next>strong{font-size:1.2rem;color:#193f43}.case-next[data-bucket=needs_assignment]{background:#f3efff;border-color:#cec0e7}.role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0}.role-grid article{display:flex;flex-direction:column;gap:7px;border:1px solid #dae4e5;border-radius:8px;padding:14px}.role-grid small{color:#4b6269}.admin-case>label{display:block;margin:14px 0}.admin-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.admin-fields label{min-width:0}.admin-case input:not([type=checkbox]),.admin-case select,.admin-case textarea{width:100%;box-sizing:border-box}.admin-case details{margin:18px 0;padding:14px;border:1px solid #d9e4e6;border-radius:8px}.admin-case summary{font-weight:700;cursor:pointer}.admin-case p{overflow-wrap:anywhere}.worklist-summary{font-weight:600}.overview-metrics small{color:#4e666c}@media(max-width:640px){.admin-fields,.overview-columns,.overview-content{grid-template-columns:minmax(0,1fr)}.overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace-header{flex-wrap:wrap}.role-grid{grid-template-columns:minmax(0,1fr)}}
+
+.admin-step-checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));list-style:none;padding:0;gap:8px}.admin-step-checklist li{padding:10px;border:1px solid #dbe5e6;border-radius:8px;font-weight:600}.admin-step-checklist li[data-state="complete"]{background:#f1f7f5;border-color:#b9d9cf;color:#245c50}.admin-step-checklist li[data-state="current"]{background:#fff8e5;border:2px solid #b17813;box-shadow:0 0 0 3px #f8e6af;color:#664408}.admin-step-checklist li[data-state="upcoming"]{color:#617176}.admin-step-checklist small{display:block;font-size:.75rem;color:inherit;font-weight:400;margin-top:5px}.manuscript-progress__next p{font-weight:600;font-size:1rem}
+.overview-table-wrap small{color:#4c5e68!important}.overview-metrics span{color:#455e66}
+.overview-metrics{grid-template-columns:repeat(4,minmax(0,1fr))}.overview-tracker>form{display:flex;align-items:end;gap:10px}.overview-tracker>form>label{flex:1}.overview-tracker>form>button{margin-bottom:0}@media(max-width:640px){.overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Bring the opened record below the sticky workspace navigation. */
+.selected-paper-panel{scroll-margin-top:12rem;margin-block:20px;min-width:0}.selected-paper-panel>button{margin-bottom:12px}.selected-paper-panel:focus{outline:2px solid #28616b;outline-offset:4px;border-radius:10px}.overview-table-wrap tr[data-selected=true]{box-shadow:inset 4px 0 #28616b}.overview-table-wrap tr[data-selected=true] button{background:#e4f0ed;color:#193f43;border-color:#28616b}@media(max-width:640px){.selected-paper-panel{scroll-margin-top:16rem}}
+
+/* Compact journal control and publication management. */
+.overview-page .overview-metrics{grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin:12px 0 16px}
+.overview-page .overview-metrics article{padding:12px;gap:4px;border-radius:8px;min-width:0}
+.overview-page .overview-metrics strong{font-size:1.5rem;line-height:1.1}
+.overview-page .overview-metrics span{font-size:.72rem;line-height:1.35}
+.overview-page .overview-panel{padding:16px;border-radius:9px}
+.overview-page .overview-table-wrap th,.overview-page .overview-table-wrap td{padding:10px 12px;vertical-align:middle}
+.overview-page .overview-table-wrap th strong,.overview-page .overview-table-wrap th small{margin:3px 0;line-height:1.35}
+.overview-page .overview-table-wrap .tracker-actions{text-align:right;white-space:nowrap;width:1%}
+.overview-page .tracker-actions button{min-height:36px;padding:6px 10px;font-size:.75rem}
+.publication-workspace .volume-board__grid{grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;align-items:start}
+.publication-workspace .volume-card{padding:12px}
+.publication-workspace .volume-card__summary{margin:6px 0;gap:8px}
+.publication-workspace .volume-issue-list{margin:6px 0 0}
+.publication-workspace .volume-issue{padding:8px 0}
+.publication-workspace .volume-card__add-issue{padding-top:8px}
+.volume-status-actions{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:6px}
+.volume-status-actions button{min-height:34px;padding:5px 8px;font-size:.75rem}
+.volume-status-actions small{flex-basis:100%;color:var(--muted);font-size:.72rem}
+.publication-workspace .publication-guide{padding:12px;margin-block:12px}
+.publication-workspace .publication-details>summary{padding:12px 16px}
+@media(max-width:1250px){.overview-page .overview-metrics{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:640px){.overview-page .overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.publication-workspace .volume-board__grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Creation tools share the archive workspace without taking its full width. */
+.publication-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+.publication-layout--tools{grid-template-columns:minmax(0,1fr) minmax(300px,350px)}
+.publication-tools{min-width:0;padding:14px;background:#fff;border:1px solid var(--line);border-radius:9px;position:sticky;top:155px;max-height:calc(100vh - 175px);overflow:auto}
+.publication-tools[hidden]{display:none}
+.publication-tools__heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.publication-tools__heading h2{font-size:1rem;margin:0}
+.publication-tools__heading button{white-space:nowrap;font-size:.75rem}
+.publication-tools .inline-form,.publication-tools .publication-optional>div{display:grid;grid-template-columns:minmax(0,1fr)}
+.publication-tools .content-panel{padding:12px;display:block}
+.publication-tools .publication-details{margin:10px 0}
+.publication-tools .publication-details>summary{padding:10px}
+.publication-tools .form-field--wide{grid-column:auto}
+.publication-tools .publication-optional{min-width:0}
+.publication-help{margin:8px 0;color:var(--muted);font-size:.8rem}
+.publication-help>summary{cursor:pointer}
+@media(max-width:1000px){.publication-layout--tools{grid-template-columns:minmax(0,1fr)}.publication-tools{grid-row:1;position:static;max-height:none}}
